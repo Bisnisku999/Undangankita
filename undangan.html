@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Fajar & Ayu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter&display=swap" rel="stylesheet">
+  
+  <!-- 🌈 STYLE CSS -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    #hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom right, #ffe6ec, #ffffff);
+      font-family: 'Great Vibes', cursive;
+    }
+
+    #hero h1 {
+      font-size: 48px;
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    #hero p {
+      font-family: 'Inter', sans-serif;
+      color: #555;
+    }
+
+    #profile {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    #profile h2 {
+      margin-bottom: 20px;
+    }
+
+    .pengantin {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .pengantin div {
+      max-width: 200px;
+    }
+
+    #countdown {
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    #timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    #timer div {
+      font-size: 24px;
+    }
+
+    #maps {
+      padding: 40px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 💍 BAGIAN HERO / JUDUL NAMA PENGANTIN -->
+  <section id="hero">
+    <h1>Fajar & Ayu</h1> <!-- 🔧 Ganti Nama Pengantin -->
+    <p>Sabtu, 9 November 2025</p> <!-- 🔧 Ganti Tanggal -->
+  </section>
+
+  <!-- 👩‍❤️‍👨 BAGIAN PROFIL PENGANTIN -->
+  <section id="profile">
+    <h2>Profil Mempelai</h2>
+    <div class="pengantin">
+      <div>
+        <h3>Fajar Ramadhan</h3> <!-- 🔧 Nama Pria -->
+        <p>Putra dari Bapak Surya & Ibu Lilis</p> <!-- 🔧 Orang Tua Pria -->
+      </div>
+      <span>&</span>
+      <div>
+        <h3>Ayu Lestari</h3> <!-- 🔧 Nama Wanita -->
+        <p>Putri dari Bapak Mulyadi & Ibu Ratna</p> <!-- 🔧 Orang Tua Wanita -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ⏳ BAGIAN COUNTDOWN WAKTU -->
+  <section id="countdown">
+    <h2>Menuju Hari Bahagia</h2>
+    <div id="timer">
+      <div><span id="days">00</span><br><small>Hari</small></div>
+      <div><span id="hours">00</span><br><small>Jam</small></div>
+      <div><span id="minutes">00</span><br><small>Menit</small></div>
+      <div><span id="seconds">00</span><br><small>Detik</small></div>
+    </div>
+  </section>
+
+  <!-- 🗺️ BAGIAN GOOGLE MAPS -->
+  <section id="maps">
+    <h2>Lokasi Acara</h2>
+    <p>Grand Alaya Ballroom, Jakarta Selatan</p> <!-- 🔧 Nama Tempat -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3987491605377!2d106.80715607599363!3d-6.211544060764491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3d1d3eb2a1d%3A0x7c0a420bb4dff693!2sGrand%20Alaya%20Ballroom!5e0!3m2!1sid!2sid!4v1721473516470!5m2!1sid!2sid" 
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe> <!-- 🔧 Ganti link peta -->
+  </section>
+
+  <!-- 📌 FOOTER -->
+  <footer>
+    <p>© 2025 Fajar & Ayu. Dibuat dengan ❤️</p> <!-- 🔧 Footer -->
+  </footer>
+
+  <!-- ⚙️ SCRIPT COUNTDOWN -->
+  <script>
+    const targetDate = new Date("2025-11-09T09:00:00").getTime(); // 🔧 Ganti tanggal dan jam acara
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = d.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
